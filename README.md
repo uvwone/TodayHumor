@@ -1,2 +1,2 @@
 # TodayHumor
-title, link, image
+practice
