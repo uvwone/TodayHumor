@@ -21,3 +21,8 @@ for i in range(count):                          #해당 개수만큼 반복
 
       source_data = source_data[pos2+1:]         #다음뉴스를 찾기위해 뒷부분을 이동시키기
       print(i+1, extract_data)                  #화면에 출력
+
+      
+      #def 함수이름(매개변수)
+            #코드블록
+            #return 함수이름
