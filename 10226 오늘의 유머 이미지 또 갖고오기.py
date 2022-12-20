@@ -7,15 +7,19 @@ source_data = site.text
 
 count = source_data.count('<td class="subject">')
 
-for i in range(count):
-       pos1 = source_data.find('<td class="subject">') + len('<td class="subject">')
-       source_data = source_data[pos1:]
+def extract_data(source_data):             #extract_data, source_data말고 더 추가해야되는게 있나?
 
-       pos2 = source_data.find('<a href="') + len('<a href="')
-       source_data = source_data[pos2:]
+       for i in range(count):
+              pos1 = source_data.find('<td class="subject">') + len('<td class="subject">')
+              source_data = source_data[pos1:]
 
-       pos3 = source_data.find('" target="')
-       extract_data = source_data[:pos3]
+              pos2 = source_data.find('<a href="') + len('<a href="')
+              source_data = source_data[pos2:]
 
-       source_data = source_data[pos3+1:]
-       print(i+1, extract_data.strip())
+              pos3 = source_data.find('" target="')
+              extract_data = source_data[:pos3]
+
+              source_data = source_data[pos3+1:]
+              print(i+1, extract_data.strip())
+              
+              return extract_data         #return을 for문쪽임? 아니면 이쪽임?
