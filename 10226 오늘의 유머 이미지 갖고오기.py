@@ -6,13 +6,16 @@ url = 'http://www.todayhumor.co.kr/board/view.php?table=bestofbest&no=461206&s_n
 site = requests.get(url, headers=headers)
 source_data = site.text
 
-pos0 = source_data.find('<div class="viewContent">') + len('<div class="viewContent">')
-source_data = source_data[pos0:]
+def pos(source_data):              #이거 함수를 pos로 지정해도 되냐
+       pos0 = source_data.find('<div class="viewContent">') + len('<div class="viewContent">')
+       source_data = source_data[pos0:]
 
-pos00 = source_data.find('</div><!--viewContent-->')
-source_data = source_data[:pos00]
+       pos00 = source_data.find('</div><!--viewContent-->')
+       source_data = source_data[:pos00]
 
-count = source_data.count('<div class="')
+       count = source_data.count('<div class="')
+       
+       return pos
 
 for i in range(count):
        pos1 = source_data.find('<img src="') + len('<img src="')
