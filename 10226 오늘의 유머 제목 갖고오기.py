@@ -12,7 +12,7 @@ source_data = site.text                         #인터넷 소스코드를 sourc
 
 count = source_data.count('"cjs_t">')           #뉴스 제목 개수 가져오기
 
-def count(*pos1, source_data, extract_data)     #111111111111111111매개변수 살려줘
+def a(pos1, pos2, extract_data)     #111111111111111111매개변수 살려줘
 
       for i in range(count):                          #해당 개수만큼 반복
             pos1 = source_data.find('"cjs_t">') + len('"cjs_t">')       #뉴스 앞 부분위치 지정
@@ -23,8 +23,10 @@ def count(*pos1, source_data, extract_data)     #111111111111111111매개변수 
 
             source_data = source_data[pos2+1:]         #다음뉴스를 찾기위해 뒷부분을 이동시키기
             print(i+1, extract_data)                  #화면에 출력
-      return count            #return 위치좀 
+      return a  
       
       #def 함수이름(매개변수)
             #코드블록
             #return 함수이름
+            
+            #이거 실행 안된다
